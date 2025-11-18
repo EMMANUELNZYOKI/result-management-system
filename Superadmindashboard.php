@@ -31,7 +31,7 @@ if(strlen($_SESSION['superalogin'])=="") {
 
     <style>
     body {
-        background-image: url('images/school system background.jpg');
+        background-image: url('images/admin.png');
         background-size: cover;
         background-attachment: fixed;
         background-position: center;
@@ -135,7 +135,7 @@ if(strlen($_SESSION['superalogin'])=="") {
                                         $totalstudents=$query1->rowCount();
                                         ?>
                                         <span class="number counter"><?php echo htmlentities($totalstudents);?></span>
-                                        <span class="name">Registered Users</span>
+                                        <span class="name">Total Students</span>
                                         <span class="bg-icon"><i class="fa fa-users"></i></span>
                                     </a>
                                 </div>
@@ -150,7 +150,7 @@ if(strlen($_SESSION['superalogin'])=="") {
                                         $totalsubjects=$query->rowCount();
                                         ?>
                                         <span class="number counter"><?php echo htmlentities($totalsubjects);?></span>
-                                        <span class="name">Subjects Listed</span>
+                                        <span class="name">Total Subjects</span>
                                         <span class="bg-icon"><i class="fa fa-ticket"></i></span>
                                     </a>
                                 </div>
@@ -180,7 +180,7 @@ if(strlen($_SESSION['superalogin'])=="") {
                                         $totalresults=$query3->rowCount();
                                         ?>
                                         <span class="number counter"><?php echo htmlentities($totalresults);?></span>
-                                        <span class="name">Results Declared</span>
+                                        <span class="name"> Total Results Declared</span>
                                         <span class="bg-icon"><i class="fa fa-file-text"></i></span>
                                     </a>
                                 </div>
