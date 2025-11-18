@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2024 at 07:31 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Nov 18, 2025 at 12:42 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,7 +39,27 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `UserName`, `Password`, `updationDate`) VALUES
-(1, 'admin', 'f925916e2754e5e03f75dd58a5733251', '2024-03-10 10:30:57');
+(1, 'admin', 'f925916e2754e5e03f75dd58a5733251', '2025-10-23 10:30:57');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `super_admin`
+--
+
+CREATE TABLE `super_admin` (
+  `id` int(11) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `updationDate` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `super_admin`
+--
+
+INSERT INTO `super_admin` (`id`, `username`, `password`, `updationDate`) VALUES
+(1, 'superadmin', '0192023a7bbd73250516f069df18b500', NULL);
 
 -- --------------------------------------------------------
 
@@ -61,14 +81,14 @@ CREATE TABLE `tblclasses` (
 --
 
 INSERT INTO `tblclasses` (`id`, `ClassName`, `ClassNameNumeric`, `Section`, `CreationDate`, `UpdationDate`) VALUES
-(1, 'First', 1, 'C', '2024-04-25 10:30:57', '2022-01-01 10:30:57'),
-(2, 'Second', 2, 'A', '2024-04-25 10:30:57', '2022-01-01 10:30:57'),
-(4, 'Fourth', 4, 'C', '2024-04-25 10:30:57', '2022-01-01 10:30:57'),
-(5, 'Sixth', 6, 'A', '2024-04-25 10:30:57', '2022-01-01 10:30:57'),
-(6, 'Sixth', 6, 'B', '2024-04-25 10:30:57', '2022-01-01 10:30:57'),
-(7, 'Seventh', 7, 'B', '2024-04-25 10:30:57', '2022-01-01 10:30:57'),
-(8, 'Eight', 8, 'A', '2024-04-25 10:30:57', '2022-01-01 10:30:57'),
-(9, 'Tenth', 10, 'A', '2024-04-25 10:30:57', NULL);
+(1, 'multi-subject learners 1', 1, 'A', '2025-10-22 10:30:57', '2025-10-23 10:30:57'),
+(2, 'multi-subject learners 2', 2, 'A', '2025-10-22 10:30:57', '2025-10-23 10:30:57'),
+(4, 'multi-subject learners 3', 3, 'A', '2025-10-22 10:30:57', '2025-10-23 10:30:57'),
+(5, 'multi-subject learners 4', 4, 'A', '2025-10-22 10:30:57', '2025-10-23 10:30:57'),
+(6, 'multi-subject learners 5', 5, 'A', '2025-10-22 10:30:57', '2025-10-23 10:30:57'),
+(7, 'multi-subject learners 6', 6, 'A', '2025-10-22 10:30:57', '2025-10-23 10:30:57'),
+(8, 'multi-subject learners 7', 7, 'A', '2025-10-22 10:30:57', '2025-10-23 10:30:57'),
+(9, 'multi-subject learners 8', 8, 'A', '2025-10-22 10:30:57', '2025-10-22 22:33:29');
 
 -- --------------------------------------------------------
 
@@ -88,8 +108,9 @@ CREATE TABLE `tblnotice` (
 --
 
 INSERT INTO `tblnotice` (`id`, `noticeTitle`, `noticeDetails`, `postingDate`) VALUES
-(2, 'Notice regarding result Delearation', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Adipiscing elit ut aliquam purus. Vel risus commodo viverra maecenas. Et netus et malesuada fames ac turpis egestas sed. Cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla. Ornare arcu odio ut sem nulla pharetra diam. Vel pharetra vel turpis nunc eget lorem dolor sed. Velit ut tortor pretium viverra suspendisse. In ornare quam viverra orci sagittis eu. Viverra tellus in hac habitasse. Donec massa sapien faucibus et molestie. Libero justo laoreet sit amet cursus sit amet dictum. Dignissim diam quis enim lobortis scelerisque fermentum dui.\r\n\r\nEget nulla facilisi etiam dignissim. Quisque non tellus orci ac. Amet cursus sit amet dictum sit amet justo donec. Interdum velit euismod in pellentesque massa. Condimentum lacinia quis vel eros donec ac odio. Magna eget est lorem ipsum dolor. Bibendum at varius vel pharetra vel turpis nunc eget lorem. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit amet. Maecenas accumsan lacus vel facilisis volutpat est velit egestas dui. Massa tincidunt dui ut ornare lectus sit amet est placerat. Nisi quis eleifend quam adipiscing vitae.', '2024-05-01 14:34:58'),
-(3, 'Test Notice', 'This is for testing purposes only.  This is for testing purposes only.  This is for testing purposes only.  This is for testing purposes only.  This is for testing purposes only.  This is for testing purposes only.  This is for testing purposes only.  This is for testing purposes only.  This is for testing purposes only.  This is for testing purposes only.  This is for testing purposes only.  This is for testing purposes only.  This is for testing purposes only.  This is for testing purposes only.  This is for testing purposes only.  This is for testing purposes only.  This is for testing purposes only.  ', '2024-05-02 14:48:32');
+(2, 'Notice regarding result Delearation', 'Date: October 23, 2025\r\nSubject: Declaration of Examination Results\r\n\r\nThis is to inform all students that the results for the Mid-Term / Final Examinations of the current academic session will be declared on October 28, 2025.\r\n\r\nStudents will be able to view their results through the Student Result Management System (SRMS) by logging in with their respective Roll Numbers and Class details.\r\n\r\nYou are advised to:\r\n\r\nVerify your details carefully after viewing your results.\r\n\r\nReport any discrepancies (if found) to the Examination Cell within 5 working days of result publication.\r\n\r\nDownload and save a copy of your result for your personal record.\r\n\r\nFor any queries related to result access or technical support, please contact the admin office at support@srms.edu.in\r\n or visit the school’s IT helpdesk during working hours.\r\n\r\nWe wish all students the very best of luck for their results!\r\n\r\nBy Order,\r\nExamination Controller\r\nStudent Result Management System (SRMS)', '2025-10-23 14:34:58'),
+(3, 'Test Notice', 'Date: October 23, 2025\r\nSubject: Upcoming Test Schedule\r\n\r\nThis is to notify all students that the upcoming internal tests for the current academic term will commence from November 3, 2025. Detailed subject-wise schedules will be displayed on the classroom notice boards and made available through the Student Result Management System (SRMS).\r\n\r\nStudents are advised to:\r\n\r\nCheck the timetable carefully and be present in their respective examination rooms at least 15 minutes before the scheduled time.\r\n\r\nCarry their valid student ID card for verification.\r\n\r\nStrictly follow all examination rules and maintain discipline during the tests.\r\n\r\nAny student facing timetable conflicts should report to the Examination Controller’s office within two working days from the date of this notice.\r\n\r\nWe wish all students the best of preparation and success in their upcoming tests.\r\n\r\nBy Order,\r\nExamination Controller\r\nStudent Result Management System (SRMS)', '2025-10-23 14:48:32'),
+(6, 'School Closing Announcement', 'Date: October 23, 2025\r\nSubject: School Closing for End of Term\r\n\r\nThis is to inform all students, teachers, and parents that the school will officially close on Friday, October 31, 2025, for the end of the academic term.\r\n\r\nAll classes, examinations, and extracurricular activities will be completed before the closing date. Students are advised to:\r\n\r\nClear all pending assignments and library dues before the closing day.\r\n\r\nCollect their progress reports from class teachers.\r\n\r\nEnsure personal belongings are taken home.\r\n\r\nThe school will reopen on Monday, January 6, 2026.\r\nWe wish everyone a restful and enjoyable holiday.\r\n\r\nBy Order\r\nSchool Administration\r\nStudent Result Management System (SRMS)', '2025-10-22 23:57:10');
 
 -- --------------------------------------------------------
 
@@ -131,7 +152,15 @@ INSERT INTO `tblresult` (`id`, `StudentId`, `ClassId`, `SubjectId`, `marks`, `Po
 (18, 6, 9, 8, 80, '2024-05-20 15:20:18', NULL),
 (19, 6, 9, 8, 70, '2024-05-20 15:20:18', NULL),
 (20, 6, 9, 2, 90, '2024-05-20 15:20:18', NULL),
-(21, 6, 9, 1, 60, '2024-05-20 15:20:18', NULL);
+(21, 6, 9, 1, 60, '2024-05-20 15:20:18', NULL),
+(22, 7, 9, 8, 98, '2025-10-22 22:55:36', NULL),
+(23, 7, 9, 8, 90, '2025-10-22 22:55:36', NULL),
+(24, 7, 9, 2, 87, '2025-10-22 22:55:36', NULL),
+(25, 7, 9, 1, 95, '2025-10-22 22:55:36', NULL),
+(26, 8, 8, 2, 78, '2025-10-23 09:35:54', NULL),
+(27, 8, 8, 1, 87, '2025-10-23 09:35:54', NULL),
+(28, 8, 8, 5, 98, '2025-10-23 09:35:54', NULL),
+(29, 8, 8, 4, 67, '2025-10-23 09:35:54', NULL);
 
 -- --------------------------------------------------------
 
@@ -157,12 +186,13 @@ CREATE TABLE `tblstudents` (
 --
 
 INSERT INTO `tblstudents` (`StudentId`, `StudentName`, `RollId`, `StudentEmail`, `Gender`, `DOB`, `ClassId`, `RegDate`, `UpdationDate`, `Status`) VALUES
-(1, 'Sarita', '46456', 'info@phpgurukul.com', 'Female', '1995-03-03', 1, '2024-04-20 10:30:57', NULL, 1),
-(2, 'Anuj kumar', '10861', 'anuj@gmail.co', 'Male', '1995-02-02', 4, '2024-04-24 10:30:57', NULL, 0),
-(3, 'amit kumar', '2626', 'amit@gmail.com', 'Male', '2014-08-06', 6, '2024-04-22 10:30:57', NULL, 1),
-(4, 'rahul kumar', '990', 'rahul01@gmail.com', 'Male', '2001-02-03', 7, '2024-04-24 10:30:57', NULL, 1),
-(5, 'sanjeev singh', '122', 'sanjeev01@gmail.com', 'Male', '2002-02-03', 8, '2024-04-25 10:30:57', NULL, 1),
-(6, 'Shiv Gupta', '12345', 'shiv34534@gmail.com', 'Male', '2007-01-12', 9, '2024-05-01 15:19:40', NULL, 1);
+(1, 'sarita', '0001', 'sarita@gmail.com', 'Female', '1995-03-03', 1, '2025-10-23 10:30:57', NULL, 1),
+(2, 'Anuj', '0002', 'anuj@gmail.com', 'Male', '1995-02-02', 4, '2025-10-23 10:30:57', NULL, 0),
+(3, 'amit', '0003', 'amit@gmail.com', 'Male', '2014-08-06', 6, '2025-10-23 10:30:57', NULL, 1),
+(4, 'rahul', '0004', 'rahul@gmail.com', 'Male', '2001-02-03', 7, '2025-10-23 10:30:57', NULL, 1),
+(6, 'Shiv', '0005', 'shiv@gmail.com', 'Male', '2007-01-12', 9, '2025-10-23 15:19:40', NULL, 1),
+(7, 'kajax', '777', 'kajax@gmail.com', 'Male', '2000-12-24', 9, '2025-10-22 22:53:57', NULL, 1),
+(8, 'joy', '0381', 'joy@gmail.com', 'Female', '1996-12-17', 8, '2025-10-23 09:35:22', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -185,15 +215,15 @@ CREATE TABLE `tblsubjectcombination` (
 
 INSERT INTO `tblsubjectcombination` (`id`, `ClassId`, `SubjectId`, `status`, `CreationDate`, `Updationdate`) VALUES
 (3, 2, 5, 0, '2024-05-01 10:30:57', '2024-06-07 05:25:49'),
-(4, 1, 2, 1, '2024-05-01 10:30:57', '2024-06-07 04:28:00'),
+(4, 1, 2, 0, '2024-05-01 10:30:57', '2025-10-22 23:01:52'),
 (5, 1, 4, 1, '2024-05-01 10:30:57', '2024-06-07 04:28:00'),
 (6, 1, 5, 1, '2024-05-01 10:30:57', '2024-06-07 04:28:00'),
 (8, 4, 4, 1, '2024-05-01 10:30:57', '2024-06-07 04:28:00'),
 (10, 4, 1, 1, '2024-05-01 10:30:57', '2024-06-07 04:28:00'),
 (12, 4, 2, 1, '2024-05-01 10:30:57', '2024-06-07 04:28:00'),
 (13, 4, 5, 1, '2024-05-01 10:30:57', '2024-06-07 04:28:00'),
-(14, 6, 1, 1, '2024-05-01 10:30:57', '2024-06-07 04:28:00'),
-(15, 6, 2, 1, '2024-05-01 10:30:57', '2024-06-07 04:28:00'),
+(14, 6, 1, 0, '2024-05-01 10:30:57', '2025-10-22 23:02:03'),
+(15, 6, 2, 0, '2024-05-01 10:30:57', '2025-10-22 23:02:13'),
 (16, 6, 4, 1, '2024-05-01 10:30:57', '2024-06-07 04:28:00'),
 (17, 6, 6, 1, '2024-05-01 10:30:57', '2024-06-07 04:28:00'),
 (18, 7, 1, 1, '2024-05-01 10:30:57', '2024-06-07 04:28:00'),
@@ -209,7 +239,8 @@ INSERT INTO `tblsubjectcombination` (`id`, `ClassId`, `SubjectId`, `status`, `Cr
 (28, 9, 1, 1, '2024-05-01 10:30:57', '2024-06-07 04:28:00'),
 (29, 9, 2, 1, '2024-05-01 10:30:57', '2024-06-07 04:28:00'),
 (30, 9, 8, 1, '2024-05-01 10:30:57', '2024-06-07 04:28:00'),
-(31, 9, 8, 1, '2024-05-01 10:30:57', '2024-06-07 04:28:00');
+(31, 9, 8, 1, '2024-05-01 10:30:57', '2024-06-07 04:28:00'),
+(32, 9, 6, 1, '2025-10-22 23:01:04', NULL);
 
 -- --------------------------------------------------------
 
@@ -230,13 +261,13 @@ CREATE TABLE `tblsubjects` (
 --
 
 INSERT INTO `tblsubjects` (`id`, `SubjectName`, `SubjectCode`, `Creationdate`, `UpdationDate`) VALUES
-(1, 'Maths', 'MTH01', '2024-04-25 10:30:57', NULL),
-(2, 'English', 'ENG11', '2024-04-25 10:30:57', NULL),
-(4, 'Science', 'SC1', '2024-04-25 10:30:57', NULL),
-(5, 'Music', 'MS', '2024-04-25 10:30:57', NULL),
-(6, 'Social Studies', 'SS08', '2024-04-25 10:30:57', NULL),
-(7, 'Physics', 'PH03', '2024-04-25 10:30:57', NULL),
-(8, 'Chemistry', 'CH65', '2024-04-25 10:30:57', NULL);
+(1, 'Maths', 'MTH01', '2025-10-23 10:30:57', NULL),
+(2, 'English', 'ENG11', '2025-10-23 10:30:57', NULL),
+(4, 'Science', 'SC1', '2025-10-23 10:30:57', NULL),
+(5, 'Music', 'MS', '2025-10-23 10:30:57', NULL),
+(6, 'Social Studies', 'SS08', '2025-10-23 10:30:57', NULL),
+(7, 'Physics', 'PH03', '2025-10-23 10:30:57', NULL),
+(8, 'Chemistry', 'CH65', '2025-10-23 10:30:57', NULL);
 
 --
 -- Indexes for dumped tables
@@ -246,6 +277,12 @@ INSERT INTO `tblsubjects` (`id`, `SubjectName`, `SubjectCode`, `Creationdate`, `
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `super_admin`
+--
+ALTER TABLE `super_admin`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -295,6 +332,12 @@ ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `super_admin`
+--
+ALTER TABLE `super_admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `tblclasses`
 --
 ALTER TABLE `tblclasses`
@@ -304,25 +347,25 @@ ALTER TABLE `tblclasses`
 -- AUTO_INCREMENT for table `tblnotice`
 --
 ALTER TABLE `tblnotice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tblresult`
 --
 ALTER TABLE `tblresult`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `tblstudents`
 --
 ALTER TABLE `tblstudents`
-  MODIFY `StudentId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `StudentId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tblsubjectcombination`
 --
 ALTER TABLE `tblsubjectcombination`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `tblsubjects`
