@@ -29,7 +29,7 @@ if(strlen($_SESSION['alogin'])=="") {
     <style>
     /* Full background image */
     body {
-        background-image: url('images/school system background.jpg');
+        background-image: url('images/teacher.jpg');
         background-size: cover;
         background-attachment: fixed;
         background-position: center;
